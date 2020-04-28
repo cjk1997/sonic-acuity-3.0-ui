@@ -1,0 +1,531 @@
+@import url(https://fonts.googleapis.com/css2?family=Lexend+Peta&display=swap);
+
+@import url(https://fonts.googleapis.com/css2?family=Lato&display=swap);
+
+html {
+    background-color: #000000;
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+  }
+
+body::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.95);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #f1f1f1;
+    border-radius: 20px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #008744;
+    cursor: pointer;
+}
+
+.background {
+    z-index: -1;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    margin-bottom: 20vh;
+    background: url('./soundwave_background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: fixed;
+    top: 0;
+}
+
+.mainTitle {
+    width: 100vw;
+    height: 100vh;
+    padding-top: 25vh;
+    padding-left: 53%;
+    font-family: 'Lexend Peta', sans-serif;
+    font-size: 70px;
+    font-weight: 500;
+    color: #f1f1f1;
+}
+
+.blackSpace {
+    width: 100vw;
+    height: 50vh;
+    background-image: linear-gradient(to bottom, rgba(8, 8, 8, 0), rgba(8, 8, 8, .8));
+}
+
+.mainBody {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100%;
+    /* margin-top: 20vh; */
+    background: rgba(8, 8, 8, .8);
+}
+
+/* .searchBar {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+} */
+
+.searchBarContainer {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    width: 100vw;
+    height: 35vh;
+    margin-top: 20vh;
+    padding-top: 5vh;
+    padding-top: 5vh;
+    /* justify-content: center; */
+    /* align-content: center; */
+    /* position: absolute; */
+}
+
+.searchBarTitle {
+    display: flex;
+    justify-content: center;
+    /* align-content: center; */
+    color: #f1f1f1;
+    font-family: 'Lexend Peta', sans-serif;
+    font-size: 35px;
+}
+
+.searchBar {
+    display: flex;
+    justify-content: center;
+    padding-top: 3vw;
+    /* align-content: center; */
+}
+
+.searchDropDown {
+    width: 10%;
+    height: auto;
+    background-color: #f1f1f1;
+    color: #000000;
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    border:0px;
+    outline:0px;
+    margin-left: 1vw;
+}
+
+.searchField {
+    width: 40%;
+    height: auto;
+    border: 30px;
+    border-color: #008744;
+    padding-left: 1vw;
+    background-color: #f1f1f1;
+    border-radius: 6px;
+    color: #000000;
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    margin-left: 1vw;
+}
+
+.searchButton {
+    width: 10%;
+    height: auto;
+    background-color: #008744;
+    border: 0;
+    border-radius: 6px;
+    color: #f1f1f1;
+    /* color: #000000; */
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    margin-left: 1vw;
+}
+
+.searchButton:hover {
+    background-color: #005f30;
+    cursor: pointer;
+}
+
+.tileContainer {
+    /* background-color: #000000; */
+    width: 100%;
+    /* margin: 0; */
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-bottom: 25vh;
+}
+
+.tileRows {
+    /* background-color: #000000; */
+    width: 80vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fill(4, 1fr));
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.track {
+    /* display: block; */
+    width: 20vw;
+    height: 20vw;
+    /* flex-grow: 1; */
+    perspective: 20vw;
+    /* position: static; */
+    /* transition: all 50ms; */
+}
+
+.flipper {
+    transition: 500ms;
+    transform-style: preserve-3d;
+    /* position: relative; */
+    width: 20vw;
+    height: 20vw;
+    /* justify-content: center; */
+}
+
+.track:hover .flipper {
+    transform: rotateY(180deg);
+    /* cursor: pointer; */
+}
+
+.albumArt, .behindArt {
+    transform-style: preserve-3d;
+    /* backface-visibility: hidden; */
+    width: 20vw;
+    height: 20vw;
+	/* position: absolute; */
+}
+
+.albumArt {
+    z-index: auto;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transform: rotateY(0deg);
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.behindArt {
+    z-index: 1;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: #1a1a1ada;
+    transform: rotateY(180deg);
+    /* padding-top:10%;
+    padding-bottom: 10%; */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    /* justify-content: space-around; */
+    justify-content: center;
+    /* flex-direction: column; */
+    /* position: relative */
+    /* justify-items: center; */
+    /* align-content: space-around; */
+    /* color: #f1f1f1;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px; */
+}
+
+/* .text { */
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-around; */
+    /* font-family: 'Lato', sans-serif;
+    color: #f1f1f1;
+    font-size: 18px; */
+    /* color: #f1f1f1;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px; */
+
+/* } */
+
+.pair {
+    display: flex;
+    text-align: left;
+    align-content: space-between;
+}
+
+.header {
+    width: 4vw;
+    display: flex;
+    flex-direction: column;
+    justify-items: left;
+    font-family: 'Lato', sans-serif;
+    color: #f1f1f1;
+    font-size: 18px;
+}
+
+.content {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lato', sans-serif;
+    color: #f1f1f1;
+    font-size: 18px;
+}
+/* 
+.outerButtonsDiv {
+    width: 60%;
+    height: auto;
+    padding-top: 2vh;
+    display: flex;
+    justify-content: space-between;
+} */
+
+.buttons {
+    width: 60%;
+    /* height: 2.5vw; */
+    padding-top: 2vh;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    /* font-family: 'Lato', sans-serif;
+    color: #f1f1f1;
+    font-size: 18px; */
+    /* display: block; */
+    /* position: absolute; */
+    /* align-items: center; */
+}
+
+/* .innerButtonsDiv {
+    width: 100%;
+    height: 100%;
+} */
+
+.editButton {
+    z-index: 100;
+    width: 45%;
+    height: 2.5vw;
+    border-radius: 25px;
+    font-family: 'Lato', sans-serif;
+    color: #f1f1f1;
+    font-size: 18px;
+    background-color: #008744;
+}
+
+.deleteButton {
+    width: 45%;
+    height: 2.5vw;
+    border-radius: 25px;
+    font-family: 'Lato', sans-serif;
+    color: #f1f1f1;
+    font-size: 18px;
+    background-color: #008744;
+}
+
+.editButton:hover {
+    background-color: #005f30;
+    cursor: pointer;
+}
+
+.deleteButton:hover {
+    background-color: #005f30;
+    cursor: pointer;
+}
+
+.modalHeaderEdit {
+    display: flex;
+    width: auto;
+    height: 10vh;
+    justify-content: center;
+    /* align-items: center; */
+    align-items: flex-end;
+    font-family: 'Lexend Peta', sans-serif;
+    font-size: 33px;
+}
+
+/* .toTopButtonContainer {
+    width: 100vw;
+    height: 100vh;
+    margin-bottom: 5vh;
+    margin-right: 4vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: fixed;
+} */
+
+/* .backToTopButton {
+    width: 3vw;
+    height: 3vw;
+} */
+
+.addButtonContainer {
+    display: flex;
+    justify-content: center;
+    background: rgba(8, 8, 8, .8);
+    width: 100vw;
+    height: 30vh;
+    clear:both;
+    position: absolute;
+}
+
+.addText {
+    display: flex;
+    justify-content: center;
+    /* align-content: center; */
+    color: #f1f1f1;
+    font-family: 'Lexend Peta', sans-serif;
+    font-size: 35px;
+    padding-right: 5vw;
+}
+
+.addButton {
+    background-color: #008744;
+    color: #f1f1f1;
+    width: 20vw;
+    height: 2.5vw;
+    border-radius: 25px;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    clear: both;
+    border: none;
+}
+
+.addButton:hover {
+    background-color: #005f30;
+    cursor: pointer;
+}
+
+.addModal {
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    /* justify-content: center; */
+    clear: both;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.addModal:focus { 
+    outline: none; 
+}
+
+.modalContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #f1f1f1;
+    width: 30vw;
+    height: 40vw;
+    transform: translate(35vw, 5vw);
+    clear: both;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.99),0 6px 20px 0 rgba(0,0,0,0.95);
+}
+
+/* .trackContainer {
+    width: 30vw;
+    height: 50%; */
+    /* height: auto; */
+    /* display: flex;
+    flex-direction: column; */
+    /* justify-content: center; */
+/* } */
+
+.modalHeader {
+    display: flex;
+    width: auto;
+    height: 10vh;
+    justify-content: center;
+    /* align-items: center; */
+    align-items: flex-end;
+    font-family: 'Lexend Peta', sans-serif;
+    font-size: 40px;
+}
+
+.formContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    display: flex;
+    width: 25vw;
+    height: 23vw;
+    justify-content: space-between;
+    align-items: center;
+    /* justify-content: space-around; */
+    /* transform: translate(2.5vw); */
+    /* display: flex; */
+    flex-direction: column;
+    /* font-family: 'Lato', sans-serif;
+    font-size: 18px; */
+}
+
+/* .title {
+    width: 100%;
+    height: auto;
+} */
+
+.inputs {
+    width: 80%;
+}
+
+.Label {
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    padding-bottom: .25vh;
+    /* float: left; */
+}
+
+.Field {
+    width: 100%;
+    height: 2.5vh;
+    padding-bottom: .25vh;
+    /* transform: translate(5vw); */
+    /* float: right; */
+}
+
+.submitButton {
+    display: flex;
+    justify-content: center;
+    background-color: #008744;
+    color: #f1f1f1;
+    width: 8vw;
+    height: 2.5vw;
+    border-radius: 25px;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    clear: both;
+    border: none;
+}
+
+.submitButton:hover {
+    background-color: #005f30;
+    cursor: pointer;
+}
+
+.cancelButtonContainer {
+    display: flex;
+    justify-content: center;
+    height: 10vh;
+}
+
+.addCancelButton {
+    display: flex;
+    justify-content: center;
+    background-color: #008744;
+    color: #f1f1f1;
+    width: 8vw;
+    height: 2.5vw;
+    /* transform: translate(11.5vw); */
+    border-radius: 25px;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    clear: both;
+    border: none;
+}
+
+.addCancelButton:hover {
+    background-color: #005f30;
+    cursor: pointer;
+}
