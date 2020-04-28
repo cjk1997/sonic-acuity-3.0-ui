@@ -301,9 +301,9 @@ body::-webkit-scrollbar-thumb:hover {
 } */
 
 .editButton {
-    z-index: 100;
     width: 45%;
     height: 2.5vw;
+    border: 0;
     border-radius: 25px;
     font-family: 'Lato', sans-serif;
     color: #f1f1f1;
@@ -314,6 +314,7 @@ body::-webkit-scrollbar-thumb:hover {
 .deleteButton {
     width: 45%;
     height: 2.5vw;
+    border: 0;
     border-radius: 25px;
     font-family: 'Lato', sans-serif;
     color: #f1f1f1;
