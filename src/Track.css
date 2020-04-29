@@ -53,7 +53,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .blackSpace {
     width: 100vw;
-    height: 30vh;
+    height: 50vh;
     background-image: linear-gradient(to bottom, rgba(8, 8, 8, 0), rgba(8, 8, 8, .8));
 }
 
@@ -62,34 +62,19 @@ body::-webkit-scrollbar-thumb:hover {
     flex-direction: column;
     width: 100vw;
     height: 100%;
-    /* margin-top: 20vh; */
     background: rgba(8, 8, 8, .8);
 }
-
-/* .searchBar {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-} */
 
 .searchBarContainer {
     display: flex;
     flex-direction: column;
-    /* justify-content: space-around; */
     width: 100vw;
     height: 35vh;
-    margin-top: 20vh;
-    padding-top: 5vh;
-    padding-top: 5vh;
-    /* justify-content: center; */
-    /* align-content: center; */
-    /* position: absolute; */
 }
 
 .searchBarTitle {
     display: flex;
     justify-content: center;
-    /* align-content: center; */
     color: #f1f1f1;
     font-family: 'Lexend Peta', sans-serif;
     font-size: 35px;
@@ -99,7 +84,6 @@ body::-webkit-scrollbar-thumb:hover {
     display: flex;
     justify-content: center;
     padding-top: 3vw;
-    /* align-content: center; */
 }
 
 .searchDropDown {
@@ -134,7 +118,6 @@ body::-webkit-scrollbar-thumb:hover {
     border: 0;
     border-radius: 6px;
     color: #f1f1f1;
-    /* color: #000000; */
     font-family: 'Lato', sans-serif;
     font-size: 24px;
     margin-left: 1vw;
@@ -146,16 +129,13 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .tileContainer {
-    /* background-color: #000000; */
     width: 100%;
-    /* margin: 0; */
     margin-left: 10vw;
     margin-right: 10vw;
     margin-bottom: 15vh;
 }
 
 .tileRows {
-    /* background-color: #000000; */
     width: 80vw;
     display: grid;
     grid-template-columns: repeat(auto-fill(4, 1fr));
@@ -165,35 +145,26 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .track {
-    /* display: block; */
     width: 20vw;
     height: 20vw;
-    /* flex-grow: 1; */
     perspective: 20vw;
-    /* position: static; */
-    /* transition: all 50ms; */
 }
 
 .flipper {
     transition: 500ms;
     transform-style: preserve-3d;
-    /* position: relative; */
     width: 20vw;
     height: 20vw;
-    /* justify-content: center; */
 }
 
 .track:hover .flipper {
     transform: rotateY(180deg);
-    /* cursor: pointer; */
 }
 
 .albumArt, .behindArt {
     transform-style: preserve-3d;
-    /* backface-visibility: hidden; */
     width: 20vw;
     height: 20vw;
-	/* position: absolute; */
 }
 
 .albumArt {
@@ -215,36 +186,12 @@ body::-webkit-scrollbar-thumb:hover {
     height: 100%;
     background-color: #1a1a1ada;
     transform: rotateY(180deg);
-    /* padding-top:10%;
-    padding-bottom: 10%; */
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
-    /* justify-content: space-around; */
     justify-content: center;
-    /* flex-direction: column; */
-    /* position: relative */
-    /* justify-items: center; */
-    /* align-content: space-around; */
-    /* color: #f1f1f1;
-    font-family: 'Lato', sans-serif;
-    font-size: 18px; */
 }
-
-/* .text { */
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: space-around; */
-    /* font-family: 'Lato', sans-serif;
-    color: #f1f1f1;
-    font-size: 18px; */
-    /* color: #f1f1f1;
-    font-family: 'Lato', sans-serif;
-    font-size: 18px; */
-
-/* } */
 
 .pair {
     display: flex;
@@ -270,34 +217,14 @@ body::-webkit-scrollbar-thumb:hover {
     color: #f1f1f1;
     font-size: 18px;
 }
-/* 
-.outerButtonsDiv {
-    width: 60%;
-    height: auto;
-    padding-top: 2vh;
-    display: flex;
-    justify-content: space-between;
-} */
 
 .buttons {
     width: 60%;
-    /* height: 2.5vw; */
     padding-top: 2vh;
     height: auto;
     display: flex;
     justify-content: space-between;
-    /* font-family: 'Lato', sans-serif;
-    color: #f1f1f1;
-    font-size: 18px; */
-    /* display: block; */
-    /* position: absolute; */
-    /* align-items: center; */
 }
-
-/* .innerButtonsDiv {
-    width: 100%;
-    height: 100%;
-} */
 
 .editButton {
     width: 45%;
@@ -336,27 +263,10 @@ body::-webkit-scrollbar-thumb:hover {
     width: auto;
     height: 10vh;
     justify-content: center;
-    /* align-items: center; */
     align-items: flex-end;
     font-family: 'Lexend Peta', sans-serif;
     font-size: 33px;
 }
-
-/* .toTopButtonContainer {
-    width: 100vw;
-    height: 100vh;
-    margin-bottom: 5vh;
-    margin-right: 4vw;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    position: fixed;
-} */
-
-/* .backToTopButton {
-    width: 3vw;
-    height: 3vw;
-} */
 
 .addButtonContainer {
     display: flex;
@@ -371,7 +281,6 @@ body::-webkit-scrollbar-thumb:hover {
 .addText {
     display: flex;
     justify-content: center;
-    /* align-content: center; */
     color: #f1f1f1;
     font-family: 'Lexend Peta', sans-serif;
     font-size: 35px;
@@ -400,7 +309,6 @@ body::-webkit-scrollbar-thumb:hover {
     z-index: 1;
     width: 100vw;
     height: 100vh;
-    /* justify-content: center; */
     clear: both;
     background-color: rgba(0, 0, 0, 0.8);
 }
@@ -421,21 +329,11 @@ body::-webkit-scrollbar-thumb:hover {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.99),0 6px 20px 0 rgba(0,0,0,0.95);
 }
 
-/* .trackContainer {
-    width: 30vw;
-    height: 50%; */
-    /* height: auto; */
-    /* display: flex;
-    flex-direction: column; */
-    /* justify-content: center; */
-/* } */
-
 .modalHeader {
     display: flex;
     width: auto;
     height: 10vh;
     justify-content: center;
-    /* align-items: center; */
     align-items: flex-end;
     font-family: 'Lexend Peta', sans-serif;
     font-size: 40px;
@@ -452,18 +350,8 @@ body::-webkit-scrollbar-thumb:hover {
     height: 23vw;
     justify-content: space-between;
     align-items: center;
-    /* justify-content: space-around; */
-    /* transform: translate(2.5vw); */
-    /* display: flex; */
     flex-direction: column;
-    /* font-family: 'Lato', sans-serif;
-    font-size: 18px; */
 }
-
-/* .title {
-    width: 100%;
-    height: auto;
-} */
 
 .inputs {
     width: 80%;
@@ -474,15 +362,12 @@ body::-webkit-scrollbar-thumb:hover {
     font-family: 'Lato', sans-serif;
     font-size: 18px;
     padding-bottom: .25vh;
-    /* float: left; */
 }
 
 .Field {
     width: 100%;
     height: 2.5vh;
     padding-bottom: .25vh;
-    /* transform: translate(5vw); */
-    /* float: right; */
 }
 
 .submitButton {
@@ -517,7 +402,6 @@ body::-webkit-scrollbar-thumb:hover {
     color: #f1f1f1;
     width: 8vw;
     height: 2.5vw;
-    /* transform: translate(11.5vw); */
     border-radius: 25px;
     font-family: 'Lato', sans-serif;
     font-size: 18px;
