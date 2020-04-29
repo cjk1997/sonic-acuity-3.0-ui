@@ -116,11 +116,11 @@ class Tracks extends Component {
                         <div className="backgroundImg"></div>
                     </div>
                     <div className="mainTitle">
-                        <div className="title">Sonic Acuity.</div>
+                        <div className="title">Sonic Acuity</div>
                     </div>
                     <div className="blackSpace"/>
                     <div className="mainBody">
-                        <div className="searchBarContainer">
+                        {/* <div className="searchBarContainer">
                             <div className="searchBarTitle">Do I have what you're looking for?</div>
                             <form className="searchBar" onSubmit={this.getTracksByValue}>
                                 <select className="searchDropDown" value={this.state.key} onChange={this.handleSearch}>
@@ -133,7 +133,7 @@ class Tracks extends Component {
                                 <input type="text" className="searchField" placeholder="Search..." value={this.state.value} onChange={this.handleSearch}/>
                                 <input type="submit" className="searchButton" value="Search"/>
                             </form>
-                        </div>
+                        </div> */}
                         <div className="tileContainer">
                             <div className="tileRows">{ displayTracks }</div>
                         </div>
