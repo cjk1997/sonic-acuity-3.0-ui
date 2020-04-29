@@ -97,7 +97,7 @@ class Tracks extends Component {
                     <div>
                         <div></div>
                         <div className="addButtonContainer">
-                            <div className="addText">Did I miss some?</div>
+                            <div className="addText">Missing some?</div>
                             <button className="addButton" onClick={this.handleOpenAddModal}>Add to the Collection</button>
                             <ReactModal className="addModal" isOpen={this.state.showAddModal}>
                                 <div className="modalContent">
