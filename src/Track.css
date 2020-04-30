@@ -6,7 +6,10 @@ html {
     background-color: #000000;
     overflow-x: hidden;
     position: relative;
-    width: 100%;
+    width: 100vw;
+    /* display: */
+    /* flex-drirection: column; */
+
 }
 
 body::-webkit-scrollbar {
@@ -27,6 +30,16 @@ body::-webkit-scrollbar-thumb:hover {
     cursor: pointer;
 }
 
+.totality {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+}
+
 .background {
     z-index: -1;
     margin: 0;
@@ -42,7 +55,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .mainTitle {
     width: 100vw;
-    height: 100vh;
+    height: 65vh;
     padding-top: 25vh;
     padding-left: 53%;
     font-family: 'Lexend Peta', sans-serif;
@@ -145,29 +158,86 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .track {
+    /* z-index: auto; */
     width: 20vw;
     height: 20vw;
-    perspective: 20vw;
+    /* perspective: 20vw; */
+    position: relative;
+    /* transition: 750ms; */
+    /* cursor: pointer; */
+    /* transform-style: preserve-3d; */
+    /* perspective: 20vw; */
+    /* outline: none ! important; */
 }
 
-.flipper {
+/* .track:hover {
+    cursor: pointer;
+} */
+
+/* .track.is-flipped {
+    transform: rotateY(180deg);
+} */
+
+/* .flipper {
     transition: 500ms;
     transform-style: preserve-3d;
     width: 20vw;
     height: 20vw;
-}
+} */
 
-.track:hover .flipper {
+/* .track:hover {
     transform: rotateY(180deg);
+    transform-style: preserve-3d;
+    cursor: pointer;
+} */
+
+/* .artButton {
+
+} */
+
+/* .artButton:hover {
+    cursor: pointer;
 }
 
-.albumArt, .behindArt {
+.artButton:focus {
+    outline: none;
+} */
+
+/* .albumArt, .behindArt {
     transform-style: preserve-3d;
+    width: 20vw;
+    height: 20vw;
+} */
+
+.artContainer {
     width: 20vw;
     height: 20vw;
 }
 
+/* .albumArt, .behindArt { */
+    /* transform-style: preserve-3d; */
+    /* -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; */
+    /* position: absolute; */
+    /* width: 100%;
+    height: 100%;
+} */
+
 .albumArt {
+    /* z-index: auto; */
+    /* transform-style: preserve-3d; */
+    /* backface-visibility: hidden; */
+    /* transform: rotateY(0deg); */
+    /* -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; */
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /* position: absolute; */
+}
+
+/* .artButton {
     z-index: auto;
     transform-style: preserve-3d;
     backface-visibility: hidden;
@@ -176,16 +246,19 @@ body::-webkit-scrollbar-thumb:hover {
     width: 100%;
     height: 100%;
     position: absolute;
-}
+} */
 
 .behindArt {
-    z-index: 1;
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
-    width: 100%;
-    height: 100%;
+    /* z-index: 1; */
+    /* transform-style: preserve-3d; */
+    /* backface-visibility: hidden; */
+    /* -webkit-backface-visibility: hidden; */
+    /* backface-visibility: hidden; */
+    width: 20vw;
+    height: 20vw;
+    position: relative;
     background-color: #1a1a1ada;
-    transform: rotateY(180deg);
+    /* transform: rotateY(180deg); */
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -193,7 +266,24 @@ body::-webkit-scrollbar-thumb:hover {
     justify-content: center;
 }
 
+.trackExitButton {
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+    background: transparent;
+    box-shadow: 0px 0px 0px transparent;
+    border: 0px solid transparent;
+    text-shadow: 0px 0px 0px transparent;
+}
+
+/* .behindArt, .behindArt::before {
+    cursor: pointer;
+} */
+
 .pair {
+    /* z-index: 1; */
     display: flex;
     text-align: left;
     align-content: space-between;
@@ -219,6 +309,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .buttons {
+    z-index: 3;
     width: 60%;
     padding-top: 2vh;
     height: auto;
@@ -271,6 +362,7 @@ body::-webkit-scrollbar-thumb:hover {
 .addButtonContainer {
     display: flex;
     justify-content: center;
+    justify-items: center;
     background: rgba(8, 8, 8, .8);
     width: 100vw;
     height: 30vh;
