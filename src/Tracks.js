@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactModal from 'react-modal';
+// import ReactCardFlip from 'react-card-flip';
 import Track from './Track';
 import AddForm from './AddForm';
 
@@ -16,11 +17,6 @@ class Tracks extends Component {
         this.handleOpenAddModal = this.handleOpenAddModal.bind(this);
         this.handleCloseAddModal = this.handleCloseAddModal.bind(this);
     };
-
-    handleSearch = ( { target } ) => {
-        const key = target.name;
-        this.setState({ [key] : target.value }, () => console.log(this.state[key]));
-    }
 
     getTracks = () => {
         const url = process.env.REACT_APP_API_URL;
@@ -39,6 +35,11 @@ class Tracks extends Component {
             .then(response => response.json())
             .then(data => this.setState({ tracks : data }))
             .catch(err => err);
+    };
+
+    handleSearch = ( { target } ) => {
+        const key = target.name;
+        this.setState({ [key] : target.value }, () => console.log(this.state[key]));
     };
 
     handleOpenAddModal() {
@@ -95,7 +96,6 @@ class Tracks extends Component {
                         </div>
                     </div>
                     <div>
-                        <div></div>
                         <div className="addButtonContainer">
                             <div className="addText">Missing some?</div>
                             <button className="addButton" onClick={this.handleOpenAddModal}>Add to the Collection</button>
@@ -109,8 +109,8 @@ class Tracks extends Component {
                                 </div>
                             </ReactModal>
                         </div>
-                        <div></div>
                     </div>
+                    <div className="footer"></div>
                 </div>
             </div>
         );
