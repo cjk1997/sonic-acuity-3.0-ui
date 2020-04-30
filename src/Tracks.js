@@ -32,7 +32,7 @@ class Tracks extends Component {
 
     getTracksByValue = (event) => {
         event.preventDefault();
-        let newValue = this.state.value.replace(/ /g,"_");
+        const newValue = this.state.value.replace(/ /g,'-');
 
         const url = process.env.REACT_APP_API_URL;
         fetch(`${url}/${this.state.key}/${newValue}`)
