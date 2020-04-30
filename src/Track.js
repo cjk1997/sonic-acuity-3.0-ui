@@ -4,12 +4,14 @@ import ReactModal from 'react-modal';
 import UpdateForm from './UpdateForm';
 import './Track.css';
 import ReactCardFlip from 'react-card-flip';
+import ReactPlayer from 'react-player';
 
 class Track extends Component {
     constructor(props) {
         super(props);
         this.state = {
             isFlipped : false,
+            play : false,
             showUpdateModal : false,
             track : this.props.track,
             id : this.props.track._id
@@ -19,16 +21,20 @@ class Track extends Component {
         this.handleCloseUpdateModal = this.handleCloseUpdateModal.bind(this);
 
         this.handleFlip = this.handleFlip.bind(this);
+
+        this.handlePlayPause = this.handlePlayPause.bind(this);
     };
 
     handleFlip(event) {
         event.preventDefault();
         this.setState(prevState => ({ isFlipped : !prevState.isFlipped }));
+        this.setState({ play : false });
     };
-    // handleFlip(event) {
-    //     document.querySelector('.track').addEventListener('click', event = () => {
-    //     this.setState({ isFlipped : !isFlipped })
-    // })};
+    
+    handlePlayPause(event) {
+        event.preventDefault();
+        this.setState(prevState => ({ play : !prevState.play }));
+    }
 
     handleOpenUpdateModal() {
         this.setState({ showUpdateModal : true });
@@ -85,6 +91,12 @@ class Track extends Component {
                                 <div className="header" id="yearReleased">Year:</div>
                                 <div className="content">{this.state.track.year_released}</div>
                             </div>
+                        </div>
+                        <div className="musicPlayer">
+
+
+                            <button className="playPauseButton" onClick={this.handlePlayPause}>Have a listen!</button>
+                            <ReactPlayer className="react-player" playing={this.state.play} url={this.state.track.video} width='0px' height='0px'/>
                         </div>
                         <div className="buttons">
                             <button className="editButton" onClick={this.handleOpenUpdateModal}>Edit</button>
