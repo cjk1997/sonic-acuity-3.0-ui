@@ -3,11 +3,13 @@ import ReactModal from 'react-modal';
 // import Tracks from './Tracks';
 import UpdateForm from './UpdateForm';
 import './Track.css';
+import ReactCardFlip from 'react-card-flip';
 
 class Track extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            isFlipped : false,
             showUpdateModal : false,
             track : this.props.track,
             id : this.props.track._id
@@ -15,7 +17,18 @@ class Track extends Component {
 
         this.handleOpenUpdateModal = this.handleOpenUpdateModal.bind(this);
         this.handleCloseUpdateModal = this.handleCloseUpdateModal.bind(this);
+
+        this.handleFlip = this.handleFlip.bind(this);
     };
+
+    handleFlip(event) {
+        event.preventDefault();
+        this.setState(prevState => ({ isFlipped : !prevState.isFlipped }));
+    };
+    // handleFlip(event) {
+    //     document.querySelector('.track').addEventListener('click', event = () => {
+    //     this.setState({ isFlipped : !isFlipped })
+    // })};
 
     handleOpenUpdateModal() {
         this.setState({ showUpdateModal : true });
@@ -39,15 +52,18 @@ class Track extends Component {
                 .then(response => response.json())
                 .then(console.log(`Deleted ID: ${this.state.track._id}`))
                 .then(this.refreshPage)
-        }
+        };
     };
     
     render()  {
         return(
             <div className="track" key={this.state.track._id}>
-                <div className="flipper">
-                    <img className="albumArt" src={`${this.state.track.url}`} alt={this.state.track._id}/>
+                <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">
+                    <div className="artContainer">
+                        <input type="image" className="albumArt" src={`${this.state.track.url}`} alt={this.state.track._id} onClick={this.handleFlip}/>
+                    </div>
                     <div className="behindArt">
+                        <input type="button" className="trackExitButton" onClick={this.handleFlip}/>
                         <div className="text">
                             <div className="pair">
                                 <div className="header" id="trackTitle">Title:</div>
@@ -84,7 +100,7 @@ class Track extends Component {
                             <button className="deleteButton" onClick={this.deleteTrack}>Delete</button>
                         </div>
                     </div>
-                </div>
+                </ReactCardFlip>
             </div>
         );
     };
