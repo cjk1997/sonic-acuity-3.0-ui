@@ -29,12 +29,17 @@ class Track extends Component {
         event.preventDefault();
         this.setState(prevState => ({ isFlipped : !prevState.isFlipped }));
         this.setState({ play : false });
+        this.resetTrack();
+    };
+
+    resetTrack = () => {
+        this.rp.seekTo(0);
     };
     
     handlePlayPause(event) {
         event.preventDefault();
         this.setState(prevState => ({ play : !prevState.play }));
-    }
+    };
 
     handleOpenUpdateModal() {
         this.setState({ showUpdateModal : true });
@@ -96,7 +101,7 @@ class Track extends Component {
 
 
                             <button className="playPauseButton" onClick={this.handlePlayPause}>Have a listen!</button>
-                            <ReactPlayer className="react-player" playing={this.state.play} url={this.state.track.video} width='0px' height='0px'/>
+                            <ReactPlayer className="react-player" playing={this.state.play} url={this.state.track.video} ref={rp => this.rp = rp} width='0px' height='0px'/>
                         </div>
                         <div className="buttons">
                             <button className="editButton" onClick={this.handleOpenUpdateModal}>Edit</button>
