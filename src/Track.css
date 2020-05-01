@@ -278,23 +278,46 @@ body::-webkit-scrollbar-thumb:hover {
     text-shadow: 0px 0px 0px transparent;
 }
 
-/* .playButton {
+.playPauseButtons {
+    display: flex;
+    position: relative;
+    width: 3vw;
+    height: 3vw;
+    padding: 0.75vw
+}
+
+.playButton {
     z-index: 5;
-    position: absolute;
+    position: relative;
+    opacity: 1;
+    cursor: pointer;
+    width: 3vw;
+    height: 3vw;
+    border: 0px solid transparent;
+    /* background-image: url('/src/play_button.png'); */
+    /* justify-content: center; */
+    filter: invert(100%) sepia(0%) saturate(7413%) hue-rotate(325deg) brightness(103%) contrast(79%);
+}
+
+.playButton:focus {
+    outline: 0;
 }
 
 .pauseButton {
     z-index: 5;
     position: absolute;
-} */
-
-.playPauseButton {
-    z-index: 5;
-    position: absolute;
+    opacity: 1;
+    cursor: pointer;
+    width: 3w;
+    height: 3vw;
+    border: 0px solid transparent;
+    /* background-image: url('/src/pause_button.png'); */
+    /* justify-content: center; */
+    filter: invert(100%) sepia(0%) saturate(7413%) hue-rotate(325deg) brightness(103%) contrast(79%);
 }
 
-.playPauseButton:hover {
-    cursor: pointer;
+.pauseButton:focus {
+    outline: 0;
 }
 
 .react-player {
@@ -331,7 +354,6 @@ body::-webkit-scrollbar-thumb:hover {
 .buttons {
     z-index: 3;
     width: 60%;
-    padding-top: 2vh;
     height: auto;
     display: flex;
     justify-content: space-between;
