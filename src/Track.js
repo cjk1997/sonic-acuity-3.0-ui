@@ -5,13 +5,16 @@ import UpdateForm from './UpdateForm';
 import './Track.css';
 import ReactCardFlip from 'react-card-flip';
 import ReactPlayer from 'react-player';
+import playButton from './play_button.png';
+import pauseButton from './pause_button.png';
 
 class Track extends Component {
     constructor(props) {
         super(props);
         this.state = {
             isFlipped : false,
-            play : false,
+            playing : false,
+            icon : playButton,
             showUpdateModal : false,
             track : this.props.track,
             id : this.props.track._id
@@ -28,7 +31,8 @@ class Track extends Component {
     handleFlip(event) {
         event.preventDefault();
         this.setState(prevState => ({ isFlipped : !prevState.isFlipped }));
-        this.setState({ play : false });
+        this.setState({ playing : false });
+        this.setState({ icon : playButton })
         this.resetTrack();
     };
 
@@ -38,7 +42,14 @@ class Track extends Component {
     
     handlePlayPause(event) {
         event.preventDefault();
-        this.setState(prevState => ({ play : !prevState.play }));
+        console.log(this.state.icon)
+        this.setState(prevState => ({ playing : !prevState.playing }));
+        if (this.state.playing === true) {
+            this.setState({ icon : playButton });
+        } else {
+            this.setState({ icon : pauseButton });
+        };
+        console.log(this.state.icon)
     };
 
     handleOpenUpdateModal() {
@@ -98,10 +109,10 @@ class Track extends Component {
                             </div>
                         </div>
                         <div className="musicPlayer">
-
-
-                            <button className="playPauseButton" onClick={this.handlePlayPause}>Have a listen!</button>
-                            <ReactPlayer className="react-player" playing={this.state.play} url={this.state.track.video} ref={rp => this.rp = rp} width='0px' height='0px'/>
+                            <div className="playPauseButtons">
+                                <input type="image" className={this.state.playing ? "pauseButton" : "playButton"} src={this.state.icon} alt="play_pause_button" onClick={this.handlePlayPause}/>
+                            </div>
+                            <ReactPlayer className="react-player" playing={this.state.playing} url={this.state.track.video} ref={rp => this.rp = rp} width='0px' height='0px'/>
                         </div>
                         <div className="buttons">
                             <button className="editButton" onClick={this.handleOpenUpdateModal}>Edit</button>
